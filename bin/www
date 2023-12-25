@@ -5,7 +5,8 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('server-staycation:server');
+// var debug = require('debug')('server-staycation:server');
+var debug = require('debug')('server-venturaresidences:server');
 var http = require('http');
 
 /**
