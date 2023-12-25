@@ -10,7 +10,7 @@ const flash = require('connect-flash');
 // const cors = require('cors');
 // import mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://aufazamzamramadhani:bwamern@cluster0.rot5dgj.mongodb.net/db_staycation?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://aufazamzamramadhani:bwamern@cluster0.i4oynxa.mongodb.net/db_venturaresidences?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

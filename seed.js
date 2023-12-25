@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 // Connect to MongoDB via Mongoose
 seeder.connect(
-  'mongodb+srv://aufazamzamramadhani:bwamern@cluster0.rot5dgj.mongodb.net/db_staycation?retryWrites=true&w=majority',
+  'mongodb+srv://aufazamzamramadhani:bwamern@cluster0.i4oynxa.mongodb.net/db_venturaresidences?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -41,7 +41,7 @@ var data = [
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc901112'),
-        name: 'Hotels with large living room',
+        name: 'Hotels',
         itemId: [
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902226') },
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902227') },
@@ -66,10 +66,10 @@ var data = [
   {
     model: 'Item',
     documents: [
-      // Tabby Town
+      // Tabby Town ganti jadi ventura residences
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
-        title: 'Tabby Town',
+        title: 'Ventura Residences',
         price: 12,
         sumBooking: 1,
         country: 'Indonesia',
@@ -110,7 +110,7 @@ var data = [
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb07') },
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb08') },
         ],
-        categoryId: '5e96cbe292b97300fc901111',
+        categoryId: '5e96cbe292b97300fc901112',
       },
       // Seattle Rain
       {
@@ -1026,17 +1026,10 @@ var data = [
     documents: [
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc903333'),
-        firstName: 'Elfin',
-        lastName: 'Sanjaya',
-        email: 'elfinsanjaya12@gmail.com',
-        phoneNumber: '082377954008',
-      },
-      {
-        _id: mongoose.Types.ObjectId('5e96cbe292b97300fc903334'),
-        firstName: 'Yein',
-        lastName: 'Narayana',
-        email: 'elfinsanjaya1207@gmail.com',
-        phoneNumber: '082377954008',
+        firstName: 'Aufa Zam Zam',
+        lastName: 'Ramadhani',
+        email: 'aufazamzamramadhani354@gmail.com',
+        phoneNumber: '081398479312',
       },
     ],
   },
@@ -1047,14 +1040,14 @@ var data = [
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc903322'),
         nameBank: 'Mandiri',
         nomorRekening: '089898',
-        name: 'elfin',
+        name: 'zam zam',
         imageUrl: 'images/logo bca.png',
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc903323'),
         nameBank: 'BCA',
         nomorRekening: '878678',
-        name: 'elfin',
+        name: 'zam zam',
         imageUrl: 'images/logo mandiri.png',
       },
     ],
