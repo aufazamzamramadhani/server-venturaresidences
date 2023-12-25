@@ -1,51 +1,44 @@
 <!-- DataTales Example -->
-<div class="card shadow mb-4 mt-2">
-  <div class="card-header py-3">
-    <a href="/admin/booking" class="btn btn-warning">Back</a>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-4">
-        <!-- <img src="http://localhost:3000/<%= booking.payments.proofPayment %>" alt="image" style="width: 100%; display: block" /> -->
-        <img src="http:/admin-venturaresidences.up.railway.app/<%= booking.payments.proofPayment %>" alt="image" style="width: 100%; display: block" />
-
-        <div class="row ml-1">
-          <% if(booking.payments.status == 'Proses') { %>
-
-          <form action="/admin/booking/<%= booking.id %>/confirmation?_method=PUT" method="POST">
-            <button type="submit" class="btn btn-success btn-sm">
-              <i class="fas fa-check"> Confirmation </i>
-            </button>
-          </form>
-          <form action="/admin/booking/<%= booking.id %>/reject?_method=PUT" method="POST" class="ml-2">
-            <button type="submit" class="btn btn-danger btn-sm">
-              <i class="fas fa-times"> Reject </i>
-            </button>
-          </form>
-          <% } %>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTableActivity" width="100%" cellspacing="0">
-            <thead>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+                <th>No</th>
+              <th>Name Bank</th>
+              <th>Nomor Rekening</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < bank.length; i++) { %>
               <tr>
-                <th>Name Member</th>
-                <th>Total</th>
-                <th>Bank From</th>
-                <th>Title</th>
+                <td><%= i + 1 %></td>
+                <td><%= bank[i].nameBank %></td>
+                <td><%= bank[i].nomorRekening %></td>
+                <td><%= bank[i].name %></td>
+                <td>
+                  <!-- <img src="http://localhost:3000/<%= bank[i].imageUrl %>" alt="imageUrl" width="70px"> -->
+                  <img src="https://admin-venturaresidences.up.railway.app/<%= bank[i].imageUrl %>" alt="imageUrl" width="70px"/>
+                </td>
+                <td>
+                  <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="POST">
+                  <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm button-update" data-id="<%= bank[i].id %>" data-name="<%= bank[i].name %>" data-namebank="<%= bank[i].nameBank %>" data-nomorrekening="<%= bank[i].nomorRekening %>"  ><i class="fas fa-edit"></i></a>
+                  <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= booking.memberId.firstName %><%= booking.memberId.lastName %></td>
-                <td>$ <%= booking.total %></td>
-                <td><%= booking.payments.bankFrom %></td>
-                <td><%= booking.itemId.title %></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+            <% } %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
